@@ -2,5 +2,7 @@
 
 ## toDo
 
-. make paths
-. make those default actions when starting (signups and all)
+. add default actions when starting (signups and all) #OK
+. add exceptions point to beauty pages
+. add flashs
+. add menu

@@ -1,6 +1,7 @@
 class AccountsController < ApplicationController
   before_action :set_account, only: [:show, :edit, :update, :destroy]
-
+  load_and_authorize_resource
+  
   # GET /accounts
   # GET /accounts.json
   def index
@@ -15,7 +16,6 @@ class AccountsController < ApplicationController
   # GET /accounts/new
   def new
     @account = Account.new
-    
   end
 
   # GET /accounts/1/edit
@@ -25,9 +25,8 @@ class AccountsController < ApplicationController
   # POST /accounts
   # POST /accounts.json
   def create
-    @user = current_user
-    @account = @user.accounts.create(account_params)
-
+    @account = current_user.accounts.create(account_params)
+    
     respond_to do |format|
       if @account.save
         format.html { redirect_to @account, notice: 'Account was successfully created.' }

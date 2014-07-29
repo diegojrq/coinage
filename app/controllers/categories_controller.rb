@@ -1,10 +1,11 @@
 class CategoriesController < ApplicationController
   before_action :set_category, only: [:show, :edit, :update, :destroy]
+  load_and_authorize_resource
 
   # GET /categories
   # GET /categories.json
   def index
-    @categories = Category.all
+    @categories = current_user.categories
   end
 
   # GET /categories/1
@@ -24,7 +25,7 @@ class CategoriesController < ApplicationController
   # POST /categories
   # POST /categories.json
   def create
-    @category = Category.new(category_params)
+    @category = current_user.categories.create(category_params)
 
     respond_to do |format|
       if @category.save
