@@ -1,0 +1,6 @@
+== README
+
+## toDo
+
+. make paths
+. make those default actions when starting (signups and all)
