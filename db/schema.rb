@@ -14,8 +14,8 @@
 ActiveRecord::Schema.define(version: 20140729221134) do
 
   create_table "accounts", force: true do |t|
-    t.string   "name"
     t.integer  "user_id"
+    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 20140729221134) do
   end
 
   create_table "transactions", force: true do |t|
+    t.integer  "account_id"
     t.string   "name"
     t.decimal  "value"
     t.datetime "created_at"

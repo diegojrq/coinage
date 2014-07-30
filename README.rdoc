@@ -2,7 +2,30 @@
 
 ## toDo
 
+# General
+
 . add default actions when starting (signups and all) #OK
 . add exceptions point to beauty pages
 . add flashs
 . add menu
+
+# Account
+
+. add messages to none transactions
+. add calculations
+
+# Transaction
+
+. fix showing and permissioning for transactions > http://localhost:3000/accounts/1/transactions  
+
+. model transaction entity and attributes
+
+. add javascript to beauty
+
+# User
+
+. add more info fields
+
+# Category
+
+. add colors

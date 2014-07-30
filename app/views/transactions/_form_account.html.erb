@@ -1,0 +1,13 @@
+<%= form_for([@account, @account.transactions.build]) do |f| %>
+  <p>
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :value %><br>
+    <%= f.text_field :value %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>

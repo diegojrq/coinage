@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
   
-  resources :transactions
-
   resources :categories
 
-  resources :accounts
+  resources :accounts do
+    resources :transactions
+  end
 
   get 'home/index'
 
