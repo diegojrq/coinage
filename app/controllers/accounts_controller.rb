@@ -61,6 +61,11 @@ class AccountsController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
+  def recalc
+    
+    
+  end
 
   private
     # Use callbacks to share common setup or constraints between actions.
@@ -70,6 +75,6 @@ class AccountsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def account_params
-      params.require(:account).permit(:name)
+      params.require(:account).permit(:name, :start_value)
     end
 end

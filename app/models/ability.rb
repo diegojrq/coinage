@@ -8,8 +8,12 @@ class Ability
     #if user.has_role? :admin
      # can :manage, :all
     #end
+    
     can :manage, Account, user_id: user.id
     can :manage, Category, user_id: user.id
+    can :manage, Operation, :account => { :user_id => user.id }
+    can :manage, Keyword, :category => { :user_id => user.id }
+    
     #
     # The first argument to `can` is the action you are giving the user 
     # permission to do.

@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
   
+  # fix for CanCan ActiveModel::ForbiddenAttributesError
   before_filter do
     resource = controller_name.singularize.to_sym
     method = "#{resource}_params"

@@ -8,19 +8,22 @@
 . add exceptions point to beauty pages
 . add flashs
 . add menu
+. add recurring transactions (parcelas)
 
 # Account
 
 . add messages to none transactions
 . add calculations
 
-# Transaction
+# Operation
 
 . fix showing and permissioning for transactions > http://localhost:3000/accounts/1/transactions  
 
 . model transaction entity and attributes
 
 . add javascript to beauty
+
+. remove index page
 
 # User
 
