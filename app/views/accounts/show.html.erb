@@ -14,21 +14,11 @@
 </p>
 
 <h2>Transactions</h2>
-@isso tem que virar ul li
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Value</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-  
+
+<ul>
   <% @increment = 0 %>
-  <tbody>
-		<%= render @account.operations %>
-  </tbody>
-</table>
+  <%= render @account.operations %>
+</ul>
 
 + <%= link_to 'Add Transaction', new_account_operation_path(@account) %> @tem um br/ aqui<br/>
 

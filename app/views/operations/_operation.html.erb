@@ -1,9 +1,7 @@
-<tr>
-	<td><%= operation.name %></td>
-	<td>@currency <%= operation.value %></td>
-	<td><%= link_to 'Edit', edit_account_operation_path(@account, operation.id) %></td>
-</tr>
-<tr>
+<li>
+	<%= operation.name %> :	@currency <%= operation.value %> | <%= link_to 'Edit', edit_account_operation_path(@account, operation.id) %>
+</li>
+<li class="balance">
 	<% @increment += operation.value %>
-	<td>Balance: @currency <%= @account.start_value + @increment  %></td>
-</tr>
+	Balance: @currency <%= @account.start_value + @increment  %>
+</li>

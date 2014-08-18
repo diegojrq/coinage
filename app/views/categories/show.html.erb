@@ -5,11 +5,5 @@
   <%= @category.name %>
 </p>
 
-<h2>Keywords</h2>
-<%= render @category.keywords %>
-
-<h2>Add a Keyword:</h2>
-<%= render "keywords/form_category" %>
-
 <%= link_to 'Edit', edit_category_path(@category) %> |
 <%= link_to 'Back', categories_path %>

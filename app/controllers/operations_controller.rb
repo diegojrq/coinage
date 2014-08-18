@@ -15,7 +15,7 @@ class OperationsController < ApplicationController
 
   # GET /operations/new
   def new
-    @operation = Operation.new
+    @operation = Operation.new    
   end
 
   # GET /operations/1/edit
@@ -81,6 +81,6 @@ class OperationsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def operation_params
-      params.require(:operation).permit(:name, :value)
+      params.require(:operation).permit(:name, :value, :category)
     end
 end

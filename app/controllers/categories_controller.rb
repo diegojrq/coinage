@@ -5,7 +5,7 @@ class CategoriesController < ApplicationController
   # GET /categories
   # GET /categories.json
   def index
-    @categories = current_user.categories
+    @categories = current_user.categories.arrange(:order => :created_at)
   end
 
   # GET /categories/1
@@ -15,7 +15,12 @@ class CategoriesController < ApplicationController
 
   # GET /categories/new
   def new
-    @category = Category.new
+    @category = Category.new(:parent_id => params[:parent_id])
+
+    3.times do
+      keyword = @category.keywords.build
+    end
+
   end
 
   # GET /categories/1/edit
@@ -70,6 +75,6 @@ class CategoriesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def category_params
-      params.require(:category).permit(:name)
+      params.require(:category).permit(:name, :color, :parent_id, keywords_attributes: [:id, :name])
     end
 end
