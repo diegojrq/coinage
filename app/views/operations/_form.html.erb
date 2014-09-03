@@ -20,6 +20,8 @@
     <%= f.text_field :value %>
   </div>
 
+  <%= collection_select(:operation_id, :category, current_user.categories, :id, :name)  %>
+consertar
 
   <div class="actions">
     <%= f.submit %>

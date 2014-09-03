@@ -1,26 +1,42 @@
 <p id="notice"><%= notice %></p>
-
 <p>
-  <strong>Name:</strong>
+  <strong>@i Symbol:</strong>
+<%= @account.symbol %>
+</p>
+<p>
+  <strong>@i Name:</strong>
   <%= @account.name %>
 </p>
 <p>
-  <strong>Start Value:</strong>
-  @currency <%= @account.start_value %>
-</p>
-<p>
-  <strong>Funds:</strong>
+  <strong>@i Funds:</strong>
   @currency <%= @account.funds %>
 </p>
+<p>
+  <strong>@i Start Value:</strong>
+  @currency <%= @account.start_value %>
+</p>
 
-<h2>Transactions</h2>
+<p>
+  <strong>@i Bank:</strong>
+<%= @account.bank %>
+</p>
+<p>
+  <strong>@i Number:</strong>
+<%= @account.number %>
+</p>
+<p>
+  <strong>@i Info:</strong>
+<%= @account.info %>
+</p>
+
+<h2>@i Transactions</h2>
 
 <ul>
   <% @increment = 0 %>
   <%= render @account.operations %>
 </ul>
 
-+ <%= link_to 'Add Transaction', new_account_operation_path(@account) %> @tem um br/ aqui<br/>
++ <%= link_to '@i Add Transaction', new_account_operation_path(@account) %> @tem um br/ aqui<br/>
 
-<%= link_to 'Edit', edit_account_path(@account) %> |
-<%= link_to 'Back', accounts_path %>
+<%= link_to '@i Edit', edit_account_path(@account) %> |
+<%= link_to '@i Back', accounts_path %>

@@ -1,0 +1,19 @@
+pt_br:
+
+  # Accounts
+  account: "Conta"
+  
+  helpers:
+      label:
+        account:
+          name: 'Nome'
+          info: 'Descrição'
+          start_value: 'Valor Inicial'
+          symbol: 'Símbolo'
+          agency: 'Agência'
+          number: 'Número'
+          bank: 'Banco'
+
+
+
+  

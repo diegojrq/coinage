@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :currencies
+
   resources :categories do
     resources :keywords
   end
