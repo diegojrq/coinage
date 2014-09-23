@@ -17,7 +17,7 @@ class CategoriesController < ApplicationController
   def new
     @category = Category.new(:parent_id => params[:parent_id])
 
-    3.times do
+    1.times do
       keyword = @category.keywords.build
     end
 

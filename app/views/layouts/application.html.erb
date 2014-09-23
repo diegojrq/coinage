@@ -9,11 +9,11 @@
 <body>
 	<div class="top-bar">
 		<% if user_signed_in? %>		
-			<span>@i Hi, <strong><%= link_to current_user.email, edit_user_registration_path %></strong>!</span>
-			<%= link_to "@i logout", destroy_user_session_path, method: :delete %>
+			<span><%= t(:compliment) %>, <strong><%= link_to current_user.first_name, edit_user_registration_path %></strong>!</span>
+			<%= link_to t(:logout), destroy_user_session_path, method: :delete %>
 		<% else %>
-			<%= link_to "@i sign up", new_user_registration_path %> |
-			<%= link_to "@i login", new_user_session_path %>
+			<%= link_to t(:signup), new_user_registration_path %> |
+			<%= link_to t(:login), new_user_session_path %>
 		<% end %>
 	</div>
 	<div class="notice">
@@ -26,8 +26,8 @@
 	</div>
 	<div class="top-nav">
 		<% if user_signed_in? %>
-			<%= link_to '@i Accounts', accounts_path %>
-			<%= link_to '@i Categories', categories_path %>
+			<%= link_to t(:accounts), accounts_path %>
+			<%= link_to t(:categories), categories_path %>
 		<% end %>
 	</div>
 	<%= yield %>

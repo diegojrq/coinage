@@ -1,19 +1,164 @@
 pt_br:
 
-  # Accounts
-  account: "Conta"
-  
+  # General
+  activerecord:
+    models:
+      user: "Usuário"
+      account: "Conta"
+    attributes:
+      user:
+        first_name: "Primeiro nome"
+        last_name: "Último nome"
+        email: "Email"
+        email_confirmation: "Confirmação de email"
+        birthday: "Data de nascimento"
+        gender: "Sexo"
+        current_password: "Senha atual"
+        password: "Senha"
+        password_confirmation: "Confirmação de senha"
+      account:
+        name: "Nome"
+        info: "Descrição"
+        start_value: "Valor inicial"
+        symbol: "Símbolo"
+        agency: "Agência"
+        number: "Número"
+        bank: "Banco"
+      category:
+        name: "Nome"
+        color: "Cor"
+      operation:
+        name: "Nome"
+        value: "Valor"
+        category: "Categoria"
+    errors:
+      models:
+        user:
+          attributes:
+            first_name:
+              blank: "não pode ser vazio!"
+            last_name:
+            email:
+              blank: "não pode ser vazio!"
+              invalid: "em formato inválido!"
+              taken: "já cadastrado!"
+            email_confirmation:
+              blank: "não pode ser vazio!"
+              confirmation: "não confere. Use apenas minúsculas!"
+            birthday:
+              blank: "tem de ser informada!"
+              invalid_date: "com formato inválido! Use o formato dd/mm/aaaa!"
+              on_or_before: "tem de ser uma data anterior ao dia de hoje!"
+            gender:
+              blank: "não pode ser vazio!"
+            current_password:
+                blank: "não pode ser vazio!"
+            password:
+              blank: "não pode ser vazio!"
+              too_short: "muito curta. A senha deve ter 8 ou mais caracteres!"                
+            password_confirmation:
+              blank: "não pode ser vazio!"
+              confirmation: "não confere!"            
+              
   helpers:
-      label:
+      submit:
+        user:
+          update: "Atualizar cadastro"
         account:
-          name: 'Nome'
-          info: 'Descrição'
-          start_value: 'Valor Inicial'
-          symbol: 'Símbolo'
-          agency: 'Agência'
-          number: 'Número'
-          bank: 'Banco'
+          create: "Criar conta"
+          update: "Atualizar conta"  
+        operation:
+          create: "Criar transação"
+          update: "Atualizar transação"
+        category:
+          create: "Criar categoria"
+          update: "Atualizar categoria"
 
-
-
+  show: "Exibir"
+  edit: "Editar"
+  new: "Novo"
+  destroy: "Remover"
+  destroy_confirm: "Tem certeza?"
+  back: "Voltar"
   
+  # Session
+  logout: "Sair"
+  login: "Entrar"
+  signup: "Cadastre-se"
+  
+  forgot_password: "Esqueceu a senha?"
+  didnt_receive_comfirmation: "Não recebeu o email de confirmação?"
+  didnt_receive_unlock: "Não recebeu instruções para o desbloqueio?"
+  
+  remember_me: "Me mantenha conectado"  
+  
+  waiting_confirmation: "Aguardando confirmação enviada para"
+  leave_blank_password: "Deixe em branco se não quer mudar a sua senha"
+  need_current_password: "Precisamos que confirme sua senha atual para que efetuemos as alterações no seu cadastro"
+  
+  compliment: "Olá"
+  
+  profile: "Perfil"
+  
+  cancel_account: "Cancelar Conta"
+  cancel_account_text: "Tem certeza que vai cancelara sua conta? Vamos ficar com saudades =/"
+  cancel_account_button: "Calncelar conta"
+  
+  # Accounts
+  accounts: "Contas"
+  
+  new_account: "Nova Conta"
+  edit_account: "Editar Conta"
+  
+  account_name: "Nome"
+  account_info: "Descrição"
+  account_start_value: "Valor Inicial"
+  account_symbol: "Símbolo"
+  account_agency: "Agência"
+  account_number: "Número"
+  account_bank: "Banco"
+  
+  balance: "Balanço"
+  
+  # Operations aka Transactions
+  operation: "Transação"
+  operations: "Transações"
+  
+  new_operation: "Incluir Transação"
+  edit_operation: "Editar Transação"
+  
+  operation_name: "Nome"
+  operation_value: "Valor"
+
+  # Categories
+  categories: "Categorias"
+  
+  new_category: "Nova Categoria"
+  new_subcategory: "Nova Subcategoria"
+  edit_category: "Editar Categoria"
+  
+  category_name: "Nome"
+  category_color: "Cor"
+  
+  # Keywords
+  keywords: "Keywords"
+  
+  insert_keyword: "Adicionar Keyword"
+  
+  # Months
+  jan: "Janeiro"
+  feb: "Fevereiro"
+  mar: "Março"
+  apr: "Abril"
+  may: "Maio"
+  jun: "Junho"
+  jul: "Julho"
+  aug: "Agosto"
+  sep: "Setembro"
+  oct: "Outubro"
+  nov: "Novembro"
+  dec: "Dezembro"
+
+  male: "Masculino"
+  female: "Feminino"
+  select: "Selecione"

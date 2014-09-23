@@ -21,3 +21,12 @@
 
 en:
   hello: "Hello world"
+
+
+## sample of plural
+
+  misc:
+    kids:
+      zero: "no kids"
+      one: "1 kid"
+      other: "%{count} kids"

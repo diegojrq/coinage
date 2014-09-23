@@ -1,6 +1,24 @@
 == README
 
+# Rules on Creation
+
+0.1 - Valdation
+1 - Internationalize
+2 - Authorization
+	
 ## toDo
+
+# Important!
+
+consertar currency no new form da account
+> consertar nos new forms: prohibited this account from being saved
+melhorar as mensagens de erro
+
+# Session
+
+. add email confirmation
+. add Facebook integrations
+. no edit colocar 3 divs, uma pra ancelar, uma ro profile e uma se o cara quiser alterar a senha, ver se faz um js show pra alterar a senha
 
 # General
 

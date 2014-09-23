@@ -1,42 +1,42 @@
 <p id="notice"><%= notice %></p>
 <p>
-  <strong>@i Symbol:</strong>
+  <strong>onde vai ser o simoblo</strong>
 <%= @account.symbol %>
 </p>
 <p>
-  <strong>@i Name:</strong>
+  <strong><%= t(:account_name) %></strong>
   <%= @account.name %>
 </p>
 <p>
-  <strong>@i Funds:</strong>
+  <strong><%= t(:account_funds) %></strong>
   @currency <%= @account.funds %>
 </p>
 <p>
-  <strong>@i Start Value:</strong>
+  <strong><%= t(:account_start_value) %></strong>
   @currency <%= @account.start_value %>
 </p>
 
 <p>
-  <strong>@i Bank:</strong>
+  <strong><%= t(:account_bank) %></strong>
 <%= @account.bank %>
 </p>
 <p>
-  <strong>@i Number:</strong>
+  <strong><%= t(:account_number) %></strong>
 <%= @account.number %>
 </p>
 <p>
-  <strong>@i Info:</strong>
+  <strong><%= t(:account_info) %></strong>
 <%= @account.info %>
 </p>
 
-<h2>@i Transactions</h2>
+<h2><%= t(:operations) %></h2>
 
 <ul>
   <% @increment = 0 %>
   <%= render @account.operations %>
 </ul>
 
-+ <%= link_to '@i Add Transaction', new_account_operation_path(@account) %> @tem um br/ aqui<br/>
++ <%= link_to t(:new_operation), new_account_operation_path(@account) %> @! tem um br/ aqui<br/>
 
-<%= link_to '@i Edit', edit_account_path(@account) %> |
-<%= link_to '@i Back', accounts_path %>
+<%= link_to t(:edit), edit_account_path(@account) %> |
+<%= link_to t(:back), accounts_path %>

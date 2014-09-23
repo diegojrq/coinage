@@ -1,27 +1,12 @@
-<h1>Listing operations</h1>
+<h1><%= @account.name %><h1>
+<h2><%= t(:operations) %></h2>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Value</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @operations.each do |operation| %>
-      <tr>
-        <td><%= operation.name %></td>
-        <td><%= operation.value %></td>
-        <td><%= link_to 'Show', account_operations_path %></td>
-
-
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<% @operations.each do |operation| %>
+  <%= operation.name %>
+  <%= operation.value %>
+  <%= link_to t(:show), account_operation_path(@account, operation) %>
+<% end %>
 
 <br>
 
-<%= link_to 'New Operation', new_account_operation_path %>
+<%= link_to t(:new_operation), new_account_operation_path %>

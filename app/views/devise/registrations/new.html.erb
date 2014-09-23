@@ -1,4 +1,4 @@
-<h2>Sign up</h2>
+<h1><%= t(:signup) %></h1>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
 	<%= devise_error_messages! %>
@@ -18,17 +18,22 @@
 		<%= f.email_field :email %>
 	</div>
 	<div>
-		<%= f.label :birthday %>
+		<%= f.label :email_confirmation %>
 		<br />
-		<%= f.text_field :birthday %>
+		<%= f.email_field :email_confirmation, autocomplete: "off" %>
+	</div>
+	<div>
+		<%= f.label :birthday, :class => 'jsDate' %>
+		<br />
+		<%= f.date_select(:birthday, order: [:day, :month, :year], :start_year => Time.now.year - 120, :end_year => Time.now.year, :use_month_names => [t(:jan), t(:feb), t(:mar), t(:apr), t(:may), t(:jun), t(:jul), t(:aug), t(:sep), t(:oct), t(:nov), t(:dec)]) %>
 	</div>
 	<div>
 		<%= f.label :gender %>
 		<br />
-		<%= f.text_field :gender %>
+		<%= f.select(:gender, options_for_select([[t(:male), 'M'], [t(:female), 'F']]), {:prompt => t(:select)})%>
 	</div>
 	<div>
-		<%= f.label :password %> <% if @validatable %><i>(<%= @minimum_password_length %> characters minimum)</i><% end %>
+		<%= f.label :password %> <% if @validatable %><i>(<%= @minimum_password_length %> characters minimum @!colocar numa imagem de interrogacao com alt)</i><% end %>
 		<br />
 	    <%= f.password_field :password, autocomplete: "off" %>
 	</div>
@@ -38,7 +43,7 @@
 	    <%= f.password_field :password_confirmation, autocomplete: "off" %>
 	</div>
 	<div>
-		<%= f.submit "Sign up" %>
+		<%= f.submit t(:signup) %>
 	</div>
 <% end %>
 

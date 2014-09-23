@@ -1,7 +1,7 @@
 <%= form_for [@account, @operation] do |f| %>
   <% if @operation.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@operation.errors.count, "error") %> prohibited this operation from being saved:</h2>
+      <h2><%= pluralize(@operation.errors.count, "error") %> @! prohibited this operation from being saved:</h2>
 
       <ul>
       <% @operation.errors.full_messages.each do |message| %>
@@ -20,8 +20,10 @@
     <%= f.text_field :value %>
   </div>
 
-  <%= collection_select(:operation_id, :category, current_user.categories, :id, :name)  %>
-consertar
+  <div class="field">
+    <%= f.label :category %><br>
+    <%= f.collection_select :category_id, current_user.categories, :id, :name %>
+  </div>
 
   <div class="actions">
     <%= f.submit %>

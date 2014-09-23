@@ -1,4 +1,6 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<h2><%= t(:edit) + " " + t(:profile) %></h2>
+
+<h3>@! colocar 3 divs, uma pra Cancelar, uma ro profile e uma se o cara quiser alterar a senha, ver se faz um js show pra alterar a senha</h3>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= devise_error_messages! %>
@@ -17,35 +19,32 @@
 	<div>
 		<%= f.label :birthday %>
 		<br />
-		<%= f.text_field :birthday %>
+		<%= f.date_select(:birthday, order: [:day, :month, :year], :start_year => Time.now.year - 120, :end_year => Time.now.year, :use_month_names => [t(:jan), t(:feb), t(:mar), t(:apr), t(:may), t(:jun), t(:jul), t(:aug), t(:sep), t(:oct), t(:nov), t(:dec)]) %>
 	</div>
 	<div>
 		<%= f.label :gender %>
 		<br />
-		<%= f.text_field :gender %>
+		<%= f.select(:gender, options_for_select([[t(:male), 'M'], [t(:female), 'F']], :selected => f.object.gender))%>
 	</div>
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+    <div><%= t(:waiting_confirmation) %> <%= resource.unconfirmed_email %></div>
   <% end %>
 
-  <div><%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
+  <div><%= f.label :password %> <i><%= t(:leave_blank_password) %></i><br />
     <%= f.password_field :password, autocomplete: "off" %></div>
 
   <div><%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation, autocomplete: "off" %></div>
 
-  <div><%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
+  <div><%= f.label :current_password %> <i><%= t(:need_current_password) %></i><br />
     <%= f.password_field :current_password, autocomplete: "off" %></div>
 
-  <div><%= f.submit "Update" %></div>
+  <div><%= f.submit %></div>
 <% end %>
 
-<h3>Cancel my account</h3>
+<h3><%= t(:cancel_account) %></h3>
 
-<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+<p><%= t(:cancel_account_text) %> <%= button_to t(:cancel_account_button), registration_path(resource_name), data: { confirm: t(:destroy_confirm) }, method: :delete %></p>
 
-<%= link_to "Back", :back %>
-
-
-<%= link_to "@trial to separate redefine password form", "registrations/edit_password" %>
+<%= link_to t(:back), :back %>

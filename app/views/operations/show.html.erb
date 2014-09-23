@@ -1,14 +1,14 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Name:</strong>
+  <strong><%= t(:operation_name) %></strong>
   <%= @operation.name %>
 </p>
 
 <p>
-  <strong>Value:</strong>
+  <strong><%= t(:operation_value) %></strong>
   <%= @operation.value %>
 </p>
 
-<%= link_to 'Edit', edit_account_operation_path(@account, @operation) %> |
-<%= link_to 'Back', account_operations_path %>
+<%= link_to t(:edit), edit_account_operation_path(@account, @operation) %> |
+<%= link_to t(:back), account_operations_path %>

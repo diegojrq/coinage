@@ -1,13 +1,12 @@
 <div class="category">
-  <div class="created_at"><%= category.created_at.strftime("%H:%M:%S %B %d, %Y") %></div>
   <div class="content">
     <%= category.name %>
   </div>
   <% unless (params.has_key?(:parent_id)) %>
     <div class="actions">
-      <%= link_to "Edit", edit_category_path(category) %> |
-   	  <%= link_to "Add Subcategory", new_category_path(:parent_id => category) %> |
-      <%= link_to "Destroy", category, :confirm => "Are you sure?", :method => :delete %>
+      <%= link_to t(:edit), edit_category_path(category) %> |
+   	  <%= link_to t(:new_subcategory), new_category_path(:parent_id => category) %> |
+      <%= link_to t(:destroy), category, :confirm => t(:destroy_confirm), :method => :delete %>
     </div>
   <% end %>
 </div>

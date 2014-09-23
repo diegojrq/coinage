@@ -4,6 +4,7 @@ gem 'devise'
 gem 'cancan'
 gem 'ancestry'
 gem 'nested_form'
+gem 'validates_timeliness', '~> 3.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.4'

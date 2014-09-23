@@ -27,7 +27,6 @@ ActiveRecord::Schema.define(version: 20140903153310) do
   end
 
   create_table "categories", force: true do |t|
-    t.integer  "operation_id"
     t.integer  "user_id"
     t.string   "name"
     t.datetime "created_at"
@@ -56,6 +55,7 @@ ActiveRecord::Schema.define(version: 20140903153310) do
 
   create_table "operations", force: true do |t|
     t.integer  "account_id"
+    t.integer  "category_id"
     t.string   "name"
     t.decimal  "value"
     t.datetime "created_at"
@@ -78,7 +78,7 @@ ActiveRecord::Schema.define(version: 20140903153310) do
     t.string   "first_name"
     t.string   "last_name"
     t.string   "gender"
-    t.datetime "birthday"
+    t.date     "birthday"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

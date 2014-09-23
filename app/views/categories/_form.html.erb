@@ -1,7 +1,7 @@
 <%= nested_form_for @category do |f| %>
   <% if @category.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@category.errors.count, "error") %> prohibited this category from being saved:</h2>
+      <h2><%= pluralize(@category.errors.count, "error") %> @! prohibited this category from being saved:</h2>
 
       <ul>
       <% @category.errors.full_messages.each do |message| %>
@@ -21,10 +21,11 @@
     <%= f.label :color %><br>
     <%= f.text_field :color %>
   </div>
-KEYWORDS
-<%= f.fields_for :keywords %>
 
-  <p><%= f.link_to_add "Add a Keyword", :keywords %></p>
+  <h3>Keywords</h3>
+  <%= f.fields_for :keywords %>
+
+  <p><%= f.link_to_add t(:insert_keyword), :keywords %></p>
 
   <div class="actions">
     <%= f.submit %>

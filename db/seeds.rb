@@ -1,8 +1,8 @@
 ## Seeds
 
 # Users
-User.create! :email => 'diegojrq@gmail.com', :password => '12345678', :password_confirmation => '12345678'
-User.create! :email => 'anap.aguiarc@gmail.com', :password => '12345678', :password_confirmation => '12345678'
+User.create! :email => 'diegojrq@gmail.com', :email_confirmation => 'diegojrq@gmail.com', :first_name => "Diego", :last_name => "Queiroz", :birthday => "28/10/1987", :gender => "Male", :password => '12345678', :password_confirmation => '12345678'
+User.create! :email => 'anap.aguiarc@gmail.com', :email_confirmation => 'anap.aguiarc@gmail.com', :first_name => "Ana", :birthday => "28/10/1987", :gender => "Female", :password => '12345678', :password_confirmation => '12345678'
 
 # Accounts
 Account.create! :name => 'Banco do Brasil', :user_id => 1, :start_value => 500
@@ -12,6 +12,10 @@ Account.create! :name => 'Bradesco', :user_id => 2, :start_value => 0
 Account.create! :name => 'Caixa Econômica', :user_id => 2, :start_value => 250
 
 # Categories
+
+Category.create! :name => "Caixa 1", :color => "250", :user_id => 1
+Category.create! :name => "Caixa 2", :color => "250", :user_id => 1
+Category.create! :name => "Caixa 3", :color => "250", :user_id => 2
 
 # Transactions
 
